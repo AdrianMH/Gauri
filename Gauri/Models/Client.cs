@@ -27,7 +27,7 @@ namespace Gauri.Models
         public decimal ReceivedAmount { get; set; }
 
         [Display(Name = "Costuri")]
-        public decimal Costs { get; set; }
+        public decimal Costs { get; set; 
     }
 
     public class ClientDBContext:DbContext
