@@ -11,7 +11,7 @@ namespace Gauri.Controllers
 {
     public class ClientsController : Controller
     {
-        private Client.ClientDbContext db = new Client.ClientDbContext();
+        private ClientViewModels.ClientDbContext db = new ClientViewModels.ClientDbContext();
 
         //
         // GET: /Clients/
@@ -26,7 +26,7 @@ namespace Gauri.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Client client = db.Clients.Find(id);
+            ClientViewModels client = db.Clients.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace Gauri.Controllers
         // POST: /Clients/Create
 
         [HttpPost]
-        public ActionResult Create(Client client)
+        public ActionResult Create(ClientViewModels client)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace Gauri.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Client client = db.Clients.Find(id);
+            ClientViewModels client = db.Clients.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -75,7 +75,7 @@ namespace Gauri.Controllers
         // POST: /Clients/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Client client)
+        public ActionResult Edit(ClientViewModels client)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace Gauri.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Client client = db.Clients.Find(id);
+            ClientViewModels client = db.Clients.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -105,7 +105,7 @@ namespace Gauri.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
+            ClientViewModels client = db.Clients.Find(id);
             db.Clients.Remove(client);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Gauri.Models
 {
-    public class Client
+    public class ClientViewModels
     {
         public int Id { get; set; }
         public string Bloc { get; set; }
@@ -31,7 +31,7 @@ namespace Gauri.Models
 
         public class ClientDbContext : DbContext
         {
-            public DbSet<Client> Clients { get; set; }
+            public DbSet<ClientViewModels> Clients { get; set; }
         }
     }
 }

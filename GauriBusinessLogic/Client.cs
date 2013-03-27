@@ -29,7 +29,7 @@ namespace GauriBusinessLogic
         //[Display(Name = "Costuri")]
         public decimal Costs { get; set; }
 
-        public class ClientDBContext : DbContext
+        public class ClientDbContext : DbContext
         {
             public DbSet<Client> Clients { get; set; }
         }
