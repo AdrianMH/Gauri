@@ -5,16 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace Gauri.Models
+namespace GauriBusinessLogic
 {
     public class Client
     {
         public int Id { get; set; }
         public string Bloc { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Data")]
+//        [Required]
+//        [DataType(DataType.Date)]
+//        [Display(Name = "Data")]
         public DateTime Date { get; set; }
 
         public int D50 { get; set; }
@@ -23,13 +23,13 @@ namespace Gauri.Models
         public int D112 { get; set; }
         public int D132 { get; set; }
 
-        [Display(Name = "Incasari")]
+        //[Display(Name = "Incasari")]
         public decimal ReceivedAmount { get; set; }
 
-        [Display(Name = "Costuri")]
+        //[Display(Name = "Costuri")]
         public decimal Costs { get; set; }
 
-        public class ClientDbContext : DbContext
+        public class ClientDBContext : DbContext
         {
             public DbSet<Client> Clients { get; set; }
         }

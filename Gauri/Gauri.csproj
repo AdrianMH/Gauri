@@ -305,6 +305,12 @@
       <DependentUpon>201303201146116_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GauriBusinessLogic\GauriBusinessLogic.csproj">
+      <Project>{3402caf2-e3ab-4fea-ae39-77a56812e0b1}</Project>
+      <Name>GauriBusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

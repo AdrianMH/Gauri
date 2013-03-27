@@ -11,7 +11,7 @@ namespace Gauri.Controllers
 {
     public class ClientsController : Controller
     {
-        private ClientDBContext db = new ClientDBContext();
+        private Client.ClientDbContext db = new Client.ClientDbContext();
 
         //
         // GET: /Clients/
