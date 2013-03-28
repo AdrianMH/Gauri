@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Gauri.Models
 {
-    public class ClientViewModels
+    public class ClientViewModel
     {
         public int Id { get; set; }
         public string Bloc { get; set; }
@@ -28,10 +28,5 @@ namespace Gauri.Models
 
         [Display(Name = "Costuri")]
         public decimal Costs { get; set; }
-
-        public class ClientDbContext : DbContext
-        {
-            public DbSet<ClientViewModels> Clients { get; set; }
-        }
     }
 }

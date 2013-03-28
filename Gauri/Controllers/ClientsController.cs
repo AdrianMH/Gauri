@@ -6,19 +6,37 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gauri.Models;
+using GauriBusinessLogic;
 
 namespace Gauri.Controllers
 {
     public class ClientsController : Controller
     {
-        private ClientViewModels.ClientDbContext db = new ClientViewModels.ClientDbContext();
+        private Client.ClientDbContext db = new Client.ClientDbContext();
 
         //
         // GET: /Clients/
 
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            //viewul are model de tip Gauri.Models.ClientViewModel
+            //db.Clients returneaza o lista de obiecte de tipul GauriBusinessLogic.Client
+            //trebuie convertita lista de Client in lista de ClientViewModel
+            var clientsViewModels = new List<ClientViewModel>();
+
+
+            var clients = db.Clients.ToList();
+            foreach (var client in clients)
+            {
+                clientsViewModels.Add(new ClientViewModel()
+                                          {
+                                              Bloc = client.Bloc,
+                                              Costs = client.Costs
+                                          }
+                    
+                    );    
+            }
+            return View(clientsViewModels);
         }
 
         //
@@ -26,12 +44,16 @@ namespace Gauri.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            ClientViewModels client = db.Clients.Find(id);
+            Client client = db.Clients.Find(id);
+            //TOdo add properties
+            ClientViewModel clientViewModel = new ClientViewModel();
+
+            clientViewModel.Bloc = client.Bloc;
             if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(clientViewModel);
         }
 
         //
@@ -46,11 +68,17 @@ namespace Gauri.Controllers
         // POST: /Clients/Create
 
         [HttpPost]
-        public ActionResult Create(ClientViewModels client)
+        public ActionResult Create(ClientViewModel client)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                //TODO Add properties
+                Client clientDb = new Client();
+                clientDb.Bloc = client.Bloc;
+                clientDb.Costs = client.Costs;
+                clientDb.Date = client.Date;
+
+                db.Clients.Add(clientDb);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -63,23 +91,31 @@ namespace Gauri.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            ClientViewModels client = db.Clients.Find(id);
+            //TODO add properties
+            Client client = db.Clients.Find(id);
+             ClientViewModel clientViewModel = new ClientViewModel();
+            clientViewModel.Bloc = client.Bloc;
+
             if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(clientViewModel);
         }
 
         //
         // POST: /Clients/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(ClientViewModels client)
+        public ActionResult Edit(ClientViewModel client)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                //TODO add properties
+                Client clientDb = new Client();
+                clientDb.Bloc = client.Bloc;
+
+                db.Entry(clientDb).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -91,12 +127,16 @@ namespace Gauri.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            ClientViewModels client = db.Clients.Find(id);
+            Client client = db.Clients.Find(id);
+            //TODO Add properties
+            ClientViewModel clientViewModel = new ClientViewModel();
+            clientViewModel.Bloc = client.Bloc;
+            clientViewModel.Date = client.Date;
             if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(clientViewModel);
         }
 
         //
@@ -105,7 +145,8 @@ namespace Gauri.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ClientViewModels client = db.Clients.Find(id);
+            
+            var client = db.Clients.Find(id);
             db.Clients.Remove(client);
             db.SaveChanges();
             return RedirectToAction("Index");

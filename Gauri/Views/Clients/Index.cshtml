@@ -1,4 +1,4 @@
-﻿@model List<Gauri.Models.ClientViewModels>
+﻿@model List<Gauri.Models.ClientViewModel>
 
 @{
     ViewBag.Title = "Lucrari";
@@ -7,39 +7,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adauga lucrare", "Create")
 </p>
 <table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Bloc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.D50)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.D60)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.D80)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.D112)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.D132)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedAmount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Costs)
-        </th>
-        <th></th>
-    </tr>
+
 
 @foreach (var item in Model) {
     <tr>

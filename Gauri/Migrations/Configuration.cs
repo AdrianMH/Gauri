@@ -1,4 +1,5 @@
 using Gauri.Models;
+using GauriBusinessLogic;
 
 namespace Gauri.Migrations
 {
@@ -7,14 +8,14 @@ namespace Gauri.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ClientViewModels.ClientDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Client.ClientDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ClientViewModels.ClientDbContext context)
+        protected override void Seed(Client.ClientDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
