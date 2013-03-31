@@ -49,6 +49,14 @@ namespace Gauri.Controllers
             ClientViewModel clientViewModel = new ClientViewModel();
 
             clientViewModel.Bloc = client.Bloc;
+            clientViewModel.Date = client.Date;
+            clientViewModel.D50 = client.D50;
+            clientViewModel.D60 = client.D60;
+            clientViewModel.D80 = client.D80;
+            clientViewModel.D112 = client.D112;
+            clientViewModel.D132 = client.D132;
+            clientViewModel.Costs = client.Costs;
+            clientViewModel.ReceivedAmount = client.ReceivedAmount;
             if (client == null)
             {
                 return HttpNotFound();
@@ -77,6 +85,13 @@ namespace Gauri.Controllers
                 clientDb.Bloc = client.Bloc;
                 clientDb.Costs = client.Costs;
                 clientDb.Date = client.Date;
+                clientDb.D50 = client.D50;
+                clientDb.D60 = client.D60;
+                clientDb.D80 = client.D80;
+                clientDb.D112 = client.D112;
+                clientDb.D132 = client.D132;
+                clientDb.ReceivedAmount = client.ReceivedAmount;
+
 
                 db.Clients.Add(clientDb);
                 db.SaveChanges();
@@ -95,6 +110,14 @@ namespace Gauri.Controllers
             Client client = db.Clients.Find(id);
              ClientViewModel clientViewModel = new ClientViewModel();
             clientViewModel.Bloc = client.Bloc;
+            clientViewModel.Date = client.Date;
+            clientViewModel.D50 = client.D50;
+            clientViewModel.D60 = client.D60;
+            clientViewModel.D80 = client.D80;
+            clientViewModel.D112 = client.D112;
+            clientViewModel.D132 = client.D132;
+            clientViewModel.Costs = client.Costs;
+            clientViewModel.ReceivedAmount = client.ReceivedAmount;
 
             if (client == null)
             {
@@ -132,6 +155,13 @@ namespace Gauri.Controllers
             ClientViewModel clientViewModel = new ClientViewModel();
             clientViewModel.Bloc = client.Bloc;
             clientViewModel.Date = client.Date;
+            clientViewModel.D50 = client.D50;
+            clientViewModel.D60 = client.D60;
+            clientViewModel.D80 = client.D80;
+            clientViewModel.D112 = client.D112;
+            clientViewModel.D132 = client.D132;
+            clientViewModel.Costs = client.Costs;
+            clientViewModel.ReceivedAmount = client.ReceivedAmount;
             if (client == null)
             {
                 return HttpNotFound();
