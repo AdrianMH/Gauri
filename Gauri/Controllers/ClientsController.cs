@@ -30,8 +30,16 @@ namespace Gauri.Controllers
             {
                 clientsViewModels.Add(new ClientViewModel()
                                           {
+                                              Id=client.Id,
+                                              Date=client.Date,
                                               Bloc = client.Bloc,
-                                              Costs = client.Costs
+                                              Costs = client.Costs,
+                                              D50=client.D50,
+                                              D60=client.D60,
+                                              D80=client.D80,
+                                              D112=client.D112,
+                                              D132=client.D132,
+                                              ReceivedAmount = client.ReceivedAmount,
                                           }
                     
                     );    
@@ -45,18 +53,9 @@ namespace Gauri.Controllers
         public ActionResult Details(int id = 0)
         {
             Client client = db.Clients.Find(id);
-            //TOdo add properties
-            ClientViewModel clientViewModel = new ClientViewModel();
+            
+            var clientViewModel = GetClientViewModel(client);
 
-            clientViewModel.Bloc = client.Bloc;
-            clientViewModel.Date = client.Date;
-            clientViewModel.D50 = client.D50;
-            clientViewModel.D60 = client.D60;
-            clientViewModel.D80 = client.D80;
-            clientViewModel.D112 = client.D112;
-            clientViewModel.D132 = client.D132;
-            clientViewModel.Costs = client.Costs;
-            clientViewModel.ReceivedAmount = client.ReceivedAmount;
             if (client == null)
             {
                 return HttpNotFound();
@@ -82,6 +81,7 @@ namespace Gauri.Controllers
             {
                 //TODO Add properties
                 Client clientDb = new Client();
+                clientDb.Id = client.Id;
                 clientDb.Bloc = client.Bloc;
                 clientDb.Costs = client.Costs;
                 clientDb.Date = client.Date;
@@ -108,7 +108,21 @@ namespace Gauri.Controllers
         {
             //TODO add properties
             Client client = db.Clients.Find(id);
-             ClientViewModel clientViewModel = new ClientViewModel();
+
+            var clientViewModel = GetClientViewModel(client);
+
+            if (client == null)
+            {
+                return HttpNotFound();
+            }
+            return View(clientViewModel);
+        }
+
+        private static ClientViewModel GetClientViewModel(Client client)
+        {
+            ClientViewModel clientViewModel = new ClientViewModel();
+            clientViewModel.Id = client.Id;
+
             clientViewModel.Bloc = client.Bloc;
             clientViewModel.Date = client.Date;
             clientViewModel.D50 = client.D50;
@@ -118,12 +132,7 @@ namespace Gauri.Controllers
             clientViewModel.D132 = client.D132;
             clientViewModel.Costs = client.Costs;
             clientViewModel.ReceivedAmount = client.ReceivedAmount;
-
-            if (client == null)
-            {
-                return HttpNotFound();
-            }
-            return View(clientViewModel);
+            return clientViewModel;
         }
 
         //
@@ -135,8 +144,19 @@ namespace Gauri.Controllers
             if (ModelState.IsValid)
             {
                 //TODO add properties
-                Client clientDb = new Client();
+                Client clientDb = db.Clients.Find(client.Id);
                 clientDb.Bloc = client.Bloc;
+                clientDb.Id = client.Id;
+                clientDb.Costs = client.Costs;
+                clientDb.Date = client.Date;
+                clientDb.D50 = client.D50;
+                clientDb.D60 = client.D60;
+                clientDb.D80 = client.D80;
+                clientDb.D112 = client.D112;
+                clientDb.D132 = client.D132;
+                clientDb.ReceivedAmount = client.ReceivedAmount;
+                
+
 
                 db.Entry(clientDb).State = EntityState.Modified;
                 db.SaveChanges();
@@ -153,6 +173,7 @@ namespace Gauri.Controllers
             Client client = db.Clients.Find(id);
             //TODO Add properties
             ClientViewModel clientViewModel = new ClientViewModel();
+            clientViewModel.Id = client.Id;
             clientViewModel.Bloc = client.Bloc;
             clientViewModel.Date = client.Date;
             clientViewModel.D50 = client.D50;
@@ -161,7 +182,7 @@ namespace Gauri.Controllers
             clientViewModel.D112 = client.D112;
             clientViewModel.D132 = client.D132;
             clientViewModel.Costs = client.Costs;
-            clientViewModel.ReceivedAmount = client.ReceivedAmount;
+            clientViewModel.ReceivedAmount = client.ReceivedAmount; 
             if (client == null)
             {
                 return HttpNotFound();
