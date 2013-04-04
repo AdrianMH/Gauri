@@ -12,6 +12,46 @@ namespace Gauri.Controllers
 {
     public class ClientsController : Controller
     {
+
+
+        public ActionResult GetSummaryView()
+        {
+            var summaryViewModel = new SummaryViewModel();
+            var clients = db.Clients;
+            int d50 = 0;
+            int d60 = 0;
+            int d80 = 0;
+            int d112 = 0;
+            int d132 = 0;
+            decimal receivedamount = 0;
+            decimal costs = 0;
+            
+            foreach (var client in clients)
+            {
+                d50 = d50 + client.D50;
+                d60 = d60 + client.D60;
+                d80 = d80 + client.D80;
+                d112 = d112 + client.D112;
+                d132 = d132 + client.D132;
+                receivedamount = receivedamount + client.ReceivedAmount;
+                costs = costs + client.Costs;
+
+            }
+
+            summaryViewModel.D50 = d50;
+            summaryViewModel.D60 = d60;
+            summaryViewModel.D80 = d80;
+            summaryViewModel.D112 = d112;
+            summaryViewModel.D132 = d132;
+            summaryViewModel.ReceivedAmount = receivedamount;
+            summaryViewModel.Costs = costs;
+
+
+
+            return PartialView("SummaryView", summaryViewModel);
+        }
+
+
         private Client.ClientDbContext db = new Client.ClientDbContext();
 
         //
@@ -19,9 +59,7 @@ namespace Gauri.Controllers
 
         public ActionResult Index()
         {
-            //viewul are model de tip Gauri.Models.ClientViewModel
-            //db.Clients returneaza o lista de obiecte de tipul GauriBusinessLogic.Client
-            //trebuie convertita lista de Client in lista de ClientViewModel
+
             var clientsViewModels = new List<ClientViewModel>();
 
 

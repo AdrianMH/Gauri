@@ -4,7 +4,11 @@
     ViewBag.Title = "Lucrari";
 }
 
-<h2>Index</h2>
+<h2></h2>
+
+@{
+    Html.RenderAction("GetSummaryView","Clients");
+}
 
 <p>
     @Html.ActionLink("Adauga lucrare", "Create")
@@ -12,6 +16,9 @@
 <table>
     
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Bloc)
         </th>
@@ -45,6 +52,9 @@
 
     @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Bloc)
             </td>
