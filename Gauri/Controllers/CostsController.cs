@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gauri.Models;
+using GauriBusinessLogic;
 
 namespace Gauri.Controllers
 {
@@ -15,6 +16,12 @@ namespace Gauri.Controllers
 
         //
         // GET: /Costs/
+
+//        public ActionResult GetTotalCostsView()
+//        {
+//            var totalCostsView = new TotalCostsViewModel();
+//            var costs = db.Costs;
+//        }
 
         public ActionResult Index()
         {

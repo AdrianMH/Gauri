@@ -11,10 +11,11 @@ namespace Gauri.Models
         public int Id { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         [Display(Name="Data")]
         public DateTime Date { get; set; }
 
-        [Display(Name="Cantitatea")]
+        [Display(Name="Pret")]
         public float Amount { get; set; }
 
         [Display(Name="Detalii")]
