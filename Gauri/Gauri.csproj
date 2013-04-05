@@ -163,7 +163,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\CostsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CostsDbContext_GauriBusinessLogic_.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +177,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientViewModel.cs" />
+    <Compile Include="Models\CostsViewModel.cs" />
     <Compile Include="Models\SummaryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -295,6 +298,11 @@
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Delete.cshtml" />
     <Content Include="Views\Clients\SummaryView.cshtml" />
+    <Content Include="Views\Costs\Index.cshtml" />
+    <Content Include="Views\Costs\Details.cshtml" />
+    <Content Include="Views\Costs\Create.cshtml" />
+    <Content Include="Views\Costs\Edit.cshtml" />
+    <Content Include="Views\Costs\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
