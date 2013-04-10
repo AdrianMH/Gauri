@@ -17,20 +17,20 @@ namespace Gauri.Controllers
         public ActionResult GetTotalCostsView()
         {
             var totalCostsViewModel = new TotalCostsViewModel();
-            var totalCosts = db.Clients;
-            float amount = 0;
+            var costs = db.Costs;
+            decimal amount = 0;
 
 
-            foreach (var client in totalCosts)
+            foreach (var cost in costs)
             {
-                amount = amount + Client.Amount;
+                amount = amount + cost.Amount;
             }
-            TotalCostsViewModel.Amount = amount;
-           
-
-
+          
+            
+            totalCostsViewModel.Amount = amount;
 
             return PartialView("TotalCostsView", totalCostsViewModel);
+          
         }
         //aici trebuie ca la Clients
         //luam din dbcontext costs

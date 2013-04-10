@@ -16,7 +16,7 @@ namespace Gauri.Models
         public DateTime Date { get; set; }
 
         [Display(Name="Pret")]
-        public float Amount { get; set; }
+        public decimal Amount { get; set; }
 
         [Display(Name="Detalii")]
         public string Description { get; set; }

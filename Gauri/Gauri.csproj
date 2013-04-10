@@ -177,7 +177,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientViewModel.cs" />
     <Compile Include="Models\CostsViewModel.cs" />
-    <Compile Include="Models\SummaryViewModel.cs" />
+    <Compile Include="Models\SummaryViewModel1.cs" />
     <Compile Include="Models\TotalCostsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,18 +1,18 @@
-namespace Gauri.Migrations
+namespace GauriBusinessLogic.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Gauri.Models.UsersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GauriBusinessLogic.ClientDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Gauri.Models.UsersContext context)
+        protected override void Seed(GauriBusinessLogic.ClientDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

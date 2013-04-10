@@ -13,6 +13,10 @@ namespace Gauri.Controllers
 
         public ActionResult GetSummaryView()
         {
+            //aici trebuie sa luam costurile totale din costs
+            decimal costsDinCumparari = GetTotalCosts();
+            //acum.. avem cost si pe client si in costs, facem 2 proprietati separata
+
             var summaryViewModel = new SummaryViewModel();
             var clients = db.Clients;
             int d50 = 0;
@@ -42,10 +46,24 @@ namespace Gauri.Controllers
             summaryViewModel.D132 = d132;
             summaryViewModel.ReceivedAmount = receivedamount;
             summaryViewModel.Costs = costs;
-
+            summaryViewModel.Costs1 = costsDinCumparari;
+            summaryViewModel.Profit = summaryViewModel.ReceivedAmount - summaryViewModel.Costs - summaryViewModel.Costs1;
 
 
             return PartialView("SummaryView", summaryViewModel);
+        }
+
+        private decimal GetTotalCosts()
+        {
+            var costs = db.Costs;
+
+            decimal amount = 0;
+            foreach (var cost in costs)
+            {
+                amount = amount + cost.Amount;
+            }
+            return amount;
+
         }
 
         // GET: /Clients/

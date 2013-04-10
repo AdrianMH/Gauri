@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace Gauri.Models
 {
@@ -11,6 +12,6 @@ namespace Gauri.Models
         public int Id { get; set; }
 
         [Display (Name="Total costuri")]
-        public float Amount { get; set; }
+        public decimal Amount { get; set; }
     }
 }
