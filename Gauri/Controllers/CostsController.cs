@@ -12,20 +12,43 @@ namespace Gauri.Controllers
 {
     public class CostsController : Controller
     {
-        private CostsDbContext_GauriBusinessLogic_ db = new CostsDbContext_GauriBusinessLogic_();
+        private ClientDbContext db = new ClientDbContext();
+
+        public ActionResult GetTotalCostsView()
+        {
+            var totalCostsViewModel = new TotalCostsViewModel();
+            var totalCosts = db.Clients;
+            float amount = 0;
+
+
+            foreach (var client in totalCosts)
+            {
+                amount = amount + Client.Amount;
+            }
+            TotalCostsViewModel.Amount = amount;
+           
+
+
+
+            return PartialView("TotalCostsView", totalCostsViewModel);
+        }
+        //aici trebuie ca la Clients
+        //luam din dbcontext costs
+        //si transformamm costs in costsviewmodel
 
         //
         // GET: /Costs/
-
-//        public ActionResult GetTotalCostsView()
-//        {
-//            var totalCostsView = new TotalCostsViewModel();
-//            var costs = db.Costs;
-//        }
-
         public ActionResult Index()
         {
-            return View(db.CostsViewModels.ToList());
+
+            var costsViewModel = new List<CostsViewModel>();
+
+            var costs = db.Costs.ToList();
+            foreach (var cost in costs)
+            {
+                costsViewModel.Add(GetCostsViewModel(cost));
+            }
+            return View(costsViewModel);
         }
 
         //
@@ -33,12 +56,12 @@ namespace Gauri.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            CostsViewModel costsviewmodel = db.CostsViewModels.Find(id);
-            if (costsviewmodel == null)
+            Costs costs = db.Costs.Find(id);
+            if (costs == null)
             {
                 return HttpNotFound();
             }
-            return View(costsviewmodel);
+            return View(GetCostsViewModel(costs));
         }
 
         //
@@ -57,8 +80,14 @@ namespace Gauri.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CostsViewModels.Add(costsviewmodel);
+                Costs costs = new Costs();
+                costs.Amount = costsviewmodel.Amount;
+                costs.Date = costsviewmodel.Date;
+                costs.Description = costsviewmodel.Description;
+
+                db.Costs.Add(costs);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
@@ -70,12 +99,12 @@ namespace Gauri.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            CostsViewModel costsviewmodel = db.CostsViewModels.Find(id);
-            if (costsviewmodel == null)
+            Costs costs = db.Costs.Find(id);
+            if (costs == null)
             {
                 return HttpNotFound();
             }
-            return View(costsviewmodel);
+            return View(GetCostsViewModel(costs));
         }
 
         //
@@ -86,7 +115,12 @@ namespace Gauri.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(costsviewmodel).State = EntityState.Modified;
+                Costs costs = db.Costs.Find(costsviewmodel.Id);
+                costs.Amount = costsviewmodel.Amount;
+                costs.Date = costsviewmodel.Date;
+                costs.Description = costsviewmodel.Description;
+
+                db.Entry(costs).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -98,12 +132,12 @@ namespace Gauri.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            CostsViewModel costsviewmodel = db.CostsViewModels.Find(id);
-            if (costsviewmodel == null)
+            Costs costs = db.Costs.Find(id);
+            if (costs == null)
             {
                 return HttpNotFound();
             }
-            return View(costsviewmodel);
+            return View(GetCostsViewModel(costs));
         }
 
         //
@@ -112,9 +146,10 @@ namespace Gauri.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            CostsViewModel costsviewmodel = db.CostsViewModels.Find(id);
-            db.CostsViewModels.Remove(costsviewmodel);
+            Costs costs = db.Costs.Find(id);
+            db.Costs.Remove(costs);
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
@@ -122,6 +157,17 @@ namespace Gauri.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        private static CostsViewModel GetCostsViewModel(Costs costs)
+        {
+            CostsViewModel costsViewModel = new CostsViewModel();
+            costsViewModel.Id = costs.Id;
+            costsViewModel.Date = costs.Date;
+            costsViewModel.Amount = costs.Amount;
+            costsViewModel.Description = costs.Description;
+
+            return costsViewModel;
         }
     }
 }

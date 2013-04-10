@@ -4,11 +4,9 @@
     ViewBag.Title = "Lucrari";
 }
 
-<h2></h2>
+<h2>LUCRARI</h2>
 
-@{
-    Html.RenderAction("GetSummaryView","Clients");
-}
+
 
 <p>
     @Html.ActionLink("Adauga lucrare", "Create")
@@ -91,3 +89,7 @@
     }
 
 </table>
+
+@{
+    Html.RenderAction("GetSummaryView","Clients");
+}

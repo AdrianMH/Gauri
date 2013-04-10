@@ -8,14 +8,14 @@ namespace Gauri.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Client.ClientDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ClientDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Client.ClientDbContext context)
+        protected override void Seed(ClientDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

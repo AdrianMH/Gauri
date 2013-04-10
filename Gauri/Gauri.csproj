@@ -165,7 +165,6 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CostsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="CostsDbContext_GauriBusinessLogic_.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

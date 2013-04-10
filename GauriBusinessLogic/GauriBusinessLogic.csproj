@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="ClientDbContext.cs" />
     <Compile Include="Costs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

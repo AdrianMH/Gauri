@@ -8,7 +8,7 @@ namespace Gauri.Models
 {
     public class TotalCostsViewModel
     {
-        public int  Id { get; set; }
+        public int Id { get; set; }
 
         [Display (Name="Total costuri")]
         public float Amount { get; set; }

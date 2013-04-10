@@ -9,6 +9,8 @@ namespace Gauri.Models
 {
     public class ClientViewModel
     {
+
+        [Display(Name="Nr.Crt")]
         public int Id { get; set; }
         public string Bloc { get; set; }
 

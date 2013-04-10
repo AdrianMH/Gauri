@@ -6,8 +6,6 @@
 
 <h2>Costuri</h2>
 
-
-
 <p>
     @Html.ActionLink("Adauga ceva.", "Create")
 </p>
@@ -45,3 +43,7 @@
 }
 
 </table>
+
+@{
+    Html.RenderAction("GetTotalCostsView","Costs");
+}

@@ -20,9 +20,7 @@ namespace GauriBusinessLogic
         public decimal ReceivedAmount { get; set; }
         public decimal Costs { get; set; }
 
-        public class ClientDbContext : DbContext
-        {
-            public DbSet<Client> Clients { get; set; }
-        }
+
+        public static float Amount { get; set; }
     }
 }
