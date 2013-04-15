@@ -1,8 +1,9 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background-color: #d3d3d3;
     margin: 0;
     padding: 0;
 }
+
 
 body {
     background-color: #fff;
@@ -12,10 +13,11 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+
 }
 
 a {
-    color: #333;
+    color: #605656;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
@@ -124,6 +126,8 @@ footer {
     font-size: .8em;
     height: 100px;
 }
+
+
 
 
 /* site title
@@ -534,11 +538,24 @@ table {
     border: 0 none;
 }
 
+table
+{
+width:100%;
+}
+th
+{
+height:50px;
+} 
+
 th {
+    border-style: solid;
+    border-width: thin;
+    border-color: inherit;
     font-size: 1.2em;
-    text-align: left;
-    border: none 0px;
+    text-align: center;
     padding-left: 0;
+    white-space: normal;
+    line-height: normal;
 }
 
     th a {
@@ -578,8 +595,13 @@ th {
     }
 
 td {
+    border: thin solid #000000;
     padding: 0.25em 2em 0.25em 0em;
-    border: 0 none;
+}
+
+td
+{
+text-align:center;
 }
 
 tr.pager td {
