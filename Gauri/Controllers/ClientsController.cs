@@ -107,7 +107,7 @@ namespace Gauri.Controllers
             {
                 Client clientDb = new Client();
                 clientDb.Id = client.Id;
-                clientDb.Bloc = client.Bloc;
+                clientDb.Bloc = client.Loc;
                 clientDb.Costs = client.Costs;
                 clientDb.Date = client.Date;
                 clientDb.D50 = client.D50;
@@ -154,7 +154,7 @@ namespace Gauri.Controllers
             {
                
                 Client clientDb = db.Clients.Find(client.Id);
-                clientDb.Bloc = client.Bloc;
+                clientDb.Bloc = client.Loc;
                 clientDb.Id = client.Id;
                 clientDb.Costs = client.Costs;
                 clientDb.Date = client.Date;
@@ -213,7 +213,7 @@ namespace Gauri.Controllers
             ClientViewModel clientViewModel = new ClientViewModel();
             clientViewModel.Id = client.Id;
 
-            clientViewModel.Bloc = client.Bloc;
+            clientViewModel.Loc = client.Bloc;
             clientViewModel.Date = client.Date;
             clientViewModel.D50 = client.D50;
             clientViewModel.D60 = client.D60;

@@ -12,17 +12,26 @@ namespace Gauri.Models
 
         [Display(Name="Nr.Crt")]
         public int Id { get; set; }
-        public string Bloc { get; set; }
+        public string Loc { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Data")]
         public DateTime Date { get; set; }
 
+        [Display(Name="50")]
         public int D50 { get; set; }
+
+        [Display(Name = "60")]
         public int D60 { get; set; }
+
+        [Display(Name = "80")]
         public int D80 { get; set; }
+
+        [Display(Name = "112")]
         public int D112 { get; set; }
+
+        [Display(Name = "132")]
         public int D132 { get; set; }
 
         [Display(Name = "Incasari")]
