@@ -549,7 +549,7 @@ height:50px;
 
 th {
     border-style: solid;
-    border-width: thin;
+    border-width: 2px;
     border-color: inherit;
     font-size: 1.2em;
     text-align: center;
@@ -595,7 +595,7 @@ th {
     }
 
 td {
-    border: thin solid #000000;
+    border: 2px solid #000000;
     padding: 0.25em 2em 0.25em 0em;
 }
 
