@@ -44,6 +44,7 @@ namespace Gauri.Controllers
             summaryViewModel.D80 = d80;
             summaryViewModel.D112 = d112;
             summaryViewModel.D132 = d132;
+            summaryViewModel.total = d50 + d60 + d80 + d112 + d132;
             summaryViewModel.ReceivedAmount = receivedamount;
             summaryViewModel.Costs = costs;
             summaryViewModel.Costs1 = costsDinCumparari;

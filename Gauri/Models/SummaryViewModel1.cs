@@ -23,6 +23,9 @@ namespace Gauri.Models
         [Display(Name = "132")]
         public int D132 { get; set; }
 
+        [Display(Name = "Total gauri")]
+        public int total { get; set; }
+
         [Display(Name="Incasari totale")]
         public decimal ReceivedAmount { get; set; }
 
