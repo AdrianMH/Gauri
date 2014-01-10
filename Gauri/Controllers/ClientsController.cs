@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web.Mvc;
@@ -68,7 +69,7 @@ namespace Gauri.Controllers
         }
 
         // GET: /Clients/
-        public ActionResult Index()
+        public ActionResult Index(DateTime? from, DateTime? to)
         {
             var clientsViewModels = new List<ClientViewModel>();
 
