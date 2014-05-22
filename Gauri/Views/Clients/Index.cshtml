@@ -11,7 +11,7 @@
     @Html.ActionLink("Adauga lucrare", "Create")
     @*@Html.TextBox("From") 
     @Html.TextBox("To")*@
-    @Html.ActionLink("Filtru","index")
+    @*@Html.ActionLink("Filtru","index")*@
 </p>
 <table>
 
@@ -36,6 +36,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.D112)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D122)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.D132)
@@ -72,6 +75,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.D112)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D122)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.D132)

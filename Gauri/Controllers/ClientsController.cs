@@ -24,6 +24,7 @@ namespace Gauri.Controllers
             int d60 = 0;
             int d80 = 0;
             int d112 = 0;
+            int d122 = 0;
             int d132 = 0;
             decimal receivedamount = 0;
             decimal costs = 0;
@@ -34,6 +35,7 @@ namespace Gauri.Controllers
                 d60 = d60 + client.D60;
                 d80 = d80 + client.D80;
                 d112 = d112 + client.D112;
+                d122 = d122 + client.D122;
                 d132 = d132 + client.D132;
                 receivedamount = receivedamount + client.ReceivedAmount;
                 costs = costs + client.Costs;
@@ -44,8 +46,9 @@ namespace Gauri.Controllers
             summaryViewModel.D60 = d60;
             summaryViewModel.D80 = d80;
             summaryViewModel.D112 = d112;
+            summaryViewModel.D122 = d122;
             summaryViewModel.D132 = d132;
-            summaryViewModel.total = d50 + d60 + d80 + d112 + d132;
+            summaryViewModel.total = d50 + d60 + d80 + d112 +d122 + d132;
             summaryViewModel.ReceivedAmount = receivedamount;
             summaryViewModel.Costs = costs;
             summaryViewModel.Costs1 = costsDinCumparari;
@@ -116,6 +119,7 @@ namespace Gauri.Controllers
                 clientDb.D60 = client.D60;
                 clientDb.D80 = client.D80;
                 clientDb.D112 = client.D112;
+                clientDb.D122 = client.D122;
                 clientDb.D132 = client.D132;
                 clientDb.ReceivedAmount = client.ReceivedAmount;
 
@@ -164,6 +168,7 @@ namespace Gauri.Controllers
                 clientDb.D60 = client.D60;
                 clientDb.D80 = client.D80;
                 clientDb.D112 = client.D112;
+                clientDb.D122 = client.D122;
                 clientDb.D132 = client.D132;
                 clientDb.ReceivedAmount = client.ReceivedAmount;
 
@@ -221,6 +226,7 @@ namespace Gauri.Controllers
             clientViewModel.D60 = client.D60;
             clientViewModel.D80 = client.D80;
             clientViewModel.D112 = client.D112;
+            clientViewModel.D122 = client.D122;
             clientViewModel.D132 = client.D132;
             clientViewModel.Costs = client.Costs;
             clientViewModel.ReceivedAmount = client.ReceivedAmount;
