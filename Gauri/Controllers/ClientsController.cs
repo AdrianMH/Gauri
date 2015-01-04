@@ -23,6 +23,7 @@ namespace Gauri.Controllers
             int d50 = 0;
             int d60 = 0;
             int d80 = 0;
+            int d90 = 0;
             int d112 = 0;
             int d122 = 0;
             int d132 = 0;
@@ -34,6 +35,7 @@ namespace Gauri.Controllers
                 d50 = d50 + client.D50;
                 d60 = d60 + client.D60;
                 d80 = d80 + client.D80;
+                d90 = d90 + client.D90;
                 d112 = d112 + client.D112;
                 d132 = d132 + client.D132;
                 receivedamount = receivedamount + client.ReceivedAmount;
@@ -44,9 +46,10 @@ namespace Gauri.Controllers
             summaryViewModel.D50 = d50;
             summaryViewModel.D60 = d60;
             summaryViewModel.D80 = d80;
+            summaryViewModel.D90 = d90;
             summaryViewModel.D112 = d112;
             summaryViewModel.D132 = d132;
-            summaryViewModel.total = d50 + d60 + d80 + d112 + d132;
+            summaryViewModel.total = d50 + d60 + d80 + d90 + d112 + d132;
             summaryViewModel.ReceivedAmount = receivedamount;
             summaryViewModel.Costs = costs;
             summaryViewModel.Costs1 = costsDinCumparari;
@@ -116,6 +119,7 @@ namespace Gauri.Controllers
                 clientDb.D50 = client.D50;
                 clientDb.D60 = client.D60;
                 clientDb.D80 = client.D80;
+                clientDb.D90 = client.D90;
                 clientDb.D112 = client.D112;
                 clientDb.D132 = client.D132;
                 clientDb.ReceivedAmount = client.ReceivedAmount;
@@ -164,6 +168,7 @@ namespace Gauri.Controllers
                 clientDb.D50 = client.D50;
                 clientDb.D60 = client.D60;
                 clientDb.D80 = client.D80;
+                clientDb.D90 = client.D90;
                 clientDb.D112 = client.D112;
                 clientDb.D132 = client.D132;
                 clientDb.ReceivedAmount = client.ReceivedAmount;
@@ -221,6 +226,7 @@ namespace Gauri.Controllers
             clientViewModel.D50 = client.D50;
             clientViewModel.D60 = client.D60;
             clientViewModel.D80 = client.D80;
+            clientViewModel.D90 = client.D90;
             clientViewModel.D112 = client.D112;
             clientViewModel.D132 = client.D132;
             clientViewModel.Costs = client.Costs;
