@@ -23,6 +23,9 @@ namespace Gauri.Models
         [Display(Name = "90")]
         public int D90 { get; set; }
 
+        [Display(Name = "100")]
+        public int D100 { get; set; }
+
         [Display(Name = "112")]
         public int D112 { get; set; }
 

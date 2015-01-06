@@ -17,6 +17,7 @@ namespace GauriBusinessLogic
         public int D70 { get; set; }
         public int D80 { get; set; }
         public int D90 { get; set; }
+        public int D100 { get; set; }
         public int D112 { get; set; }
         public int D122 { get; set; }
         public int D132 { get; set; }

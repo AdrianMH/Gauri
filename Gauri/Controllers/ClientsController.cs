@@ -25,6 +25,7 @@ namespace Gauri.Controllers
             int d70 = 0;
             int d80 = 0;
             int d90 = 0;
+            int d100 = 0;
             int d112 = 0;
             int d122 = 0;
             int d132 = 0;
@@ -38,6 +39,7 @@ namespace Gauri.Controllers
                 d70 = d70 + client.D70;
                 d80 = d80 + client.D80;
                 d90 = d90 + client.D90;
+                d100 = d100 + client.D100;
                 d112 = d112 + client.D112;
                 d122 = d122 + client.D122;
                 d132 = d132 + client.D132;
@@ -51,10 +53,11 @@ namespace Gauri.Controllers
             summaryViewModel.D70 = d70;
             summaryViewModel.D80 = d80;
             summaryViewModel.D90 = d90;
+            summaryViewModel.D100 = d100;
             summaryViewModel.D112 = d112;
             summaryViewModel.D122 = d122;
             summaryViewModel.D132 = d132;
-            summaryViewModel.total = d50 + d60 + d70 + d80 + d90 + d112 + d122 + d132;
+            summaryViewModel.total = d50 + d60 + d70 + d80 + d90 + d100 + d112 + d122 + d132;
             summaryViewModel.ReceivedAmount = receivedamount;
             summaryViewModel.Costs = costs;
             summaryViewModel.Costs1 = costsDinCumparari;
@@ -126,6 +129,7 @@ namespace Gauri.Controllers
                 clientDb.D70 = client.D70;
                 clientDb.D80 = client.D80;
                 clientDb.D90 = client.D90;
+                clientDb.D100 = client.D100;
                 clientDb.D112 = client.D112;
                 clientDb.D122 = client.D122;
                 clientDb.D132 = client.D132;
@@ -177,6 +181,7 @@ namespace Gauri.Controllers
                 clientDb.D70 = client.D70;
                 clientDb.D80 = client.D80;
                 clientDb.D90 = client.D90;
+                clientDb.D100 = client.D100;
                 clientDb.D112 = client.D112;
                 clientDb.D122 = client.D122;
                 clientDb.D132 = client.D132;
@@ -237,6 +242,7 @@ namespace Gauri.Controllers
             clientViewModel.D70 = client.D70;
             clientViewModel.D80 = client.D80;
             clientViewModel.D90 = client.D90;
+            clientViewModel.D100 = client.D100;
             clientViewModel.D112 = client.D112;
             clientViewModel.D122 = client.D122;
             clientViewModel.D132 = client.D132;

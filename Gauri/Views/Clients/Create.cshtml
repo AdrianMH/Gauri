@@ -69,6 +69,14 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.D100)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.D100)
+            @Html.ValidationMessageFor(model => model.D100)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.D112)
         </div>
         <div class="editor-field">
