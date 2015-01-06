@@ -14,6 +14,9 @@ namespace Gauri.Models
         [Display(Name = "60")]
         public int D60 { get; set; }
 
+        [Display(Name = "70")]
+        public int D70 { get; set; }
+
         [Display(Name = "80")]
         public int D80 { get; set; }
 
@@ -22,8 +25,11 @@ namespace Gauri.Models
 
         [Display(Name = "112")]
         public int D112 { get; set; }
+
+        [Display(Name = "122")]
+        public int D122 { get; set; }
                 
-        [Display(Name = "122-132")]
+        [Display(Name = "132")]
         public int D132 { get; set; }
 
         [Display(Name = "Total gauri")]

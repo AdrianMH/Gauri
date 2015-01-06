@@ -12,7 +12,7 @@ namespace Gauri.Controllers
 {
     public class CostsController : Controller
     {
-        private ClientDbContext db = new ClientDbContext();
+        private ClientDbContextDb db = new ClientDbContextDb();
 
         public ActionResult GetTotalCostsView()
         {
