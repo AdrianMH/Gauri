@@ -79,7 +79,7 @@ namespace Gauri.Controllers
 
         // GET: /Clients/
         public ActionResult Index(DateTime? from, DateTime? to)
-        {
+      {
             var clientsViewModels = new List<ClientViewModel>();
 
             var clients = db.Clients.ToList();
